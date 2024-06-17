@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ETE - Estação de Tratamento de Efluentes TSSE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-inicial">
+        <li class="text">Inicial</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-prdio-operao">
+        <li class="text">Prédio Operação</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-andar-1">
+        <li class="text">Andar 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-andar-1a">
+        <li class="text">Andar 1a</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-andar-2">
+        <li class="text">Andar 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-tanque-3214">
+        <li class="text">Tanque 3214</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-flotoadores-frente">
+        <li class="text">Flotoadores Frente</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-flotoadores-diagonal">
+        <li class="text">Flotoadores Diagonal</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-rua-de-acesso-ao-tanques-de-produtos-qumicos">
+        <li class="text">Rua de acesso ao Tanques de produtos químicos</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-reatores-viso-diagonal">
+        <li class="text">Reatores Visão Diagonal</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-reator-a">
+        <li class="text">Reator A</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-reator-b">
+        <li class="text">Reator B</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-reator-c">
+        <li class="text">Reator C</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-prdio-secadores">
+        <li class="text">Prédio Secadores</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-rua-de-acesso-tratamento-qumico">
+        <li class="text">Rua de acesso Tratamento Químico</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-tanque-qumico-01">
+        <li class="text">Tanque Químico 01</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-tanque-qumico-02">
+        <li class="text">Tanque Químico 02</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-tanque-qumico-03">
+        <li class="text">Tanque Químico 03</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-tanque-qumico-04">
+        <li class="text">Tanque Químico 04</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-rua-filtros-e-manganes">
+        <li class="text">Rua Filtros e Manganes</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="20-filtros">
+        <li class="text">Filtros</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="21-manganes">
+        <li class="text">Manganes</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="22-vasos">
+        <li class="text">Vasos</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="23-esquina-da-sada-do-lodo">
+        <li class="text">Esquina da saída do lodo</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="24-esquina-de-acesso-ao-tanque-de-equalizao">
+        <li class="text">Esquina de acesso ao tanque de equalização</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="25-acesso-soprador">
+        <li class="text">Acesso Soprador</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="26-tanque-de-equalizao">
+        <li class="text">Tanque de Equalização</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
